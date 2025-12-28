@@ -7,7 +7,7 @@ import {
   InitiativeCard,
   Initiative,
 } from "./components/InitiativeCard";
-import { InitiativesCarousel } from "./components/InitiativesCarousel";
+import { InitiativesGrid } from "./components/InitiativesGrid";
 import { About } from "./components/About";
 import { InitiativeDetail } from "./components/InitiativeDetail";
 
@@ -83,7 +83,7 @@ const initiatives: ExtendedInitiative[] = [
     fullDescription:
       "Herramienta de lectura inteligente que se adapta al nivel de conocimiento del usuario, generando resúmenes contextuales, definiciones in-line y conexiones conceptuales en documentación técnica compleja.",
     tags: ["IA", "Documentación", "Aprendizaje"],
-    bgColor: "#F8F9FA",
+    bgColor: "#FFFFFF",
     textColor: "#1A1A1B",
     accentColor: "#6366F1",
     icon: <Code className="w-12 h-12" />,
@@ -210,7 +210,7 @@ export default function App() {
 
             {/* Initiatives Grid */}
             <section className="py-24 bg-white">
-              <div className="max-w-[1400px] mx-auto px-8 lg:px-24">
+              <div className="grid-container">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -228,22 +228,16 @@ export default function App() {
                   </p>
                 </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <InitiativesCarousel
-                    initiatives={initiatives}
-                    onSelectInitiative={handleSelectInitiative}
-                  />
-                </motion.div>
+                <InitiativesGrid
+                  initiatives={initiatives}
+                  onSelectInitiative={handleSelectInitiative}
+                />
               </div>
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 bg-[#F8F9FA]">
-              <div className="max-w-[1400px] mx-auto px-8 lg:px-24 text-center">
+            <section className="py-24 bg-surface-secondary">
+              <div className="grid-container text-center">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -291,7 +285,7 @@ export default function App() {
                 </h1>
 
                 <div className="space-y-6 mt-12">
-                  <div className="p-6 rounded-[20px] bg-[#F8F9FA] border border-gray-100">
+                  <div className="p-6 rounded-[20px] bg-surface-secondary border border-gray-100">
                     <h3 className="mb-3">
                       ¿Qué significa inscribirse al EAP?
                     </h3>
@@ -305,7 +299,7 @@ export default function App() {
                     </p>
                   </div>
 
-                  <div className="p-6 rounded-[20px] bg-[#F8F9FA] border border-gray-100">
+                  <div className="p-6 rounded-[20px] bg-surface-secondary border border-gray-100">
                     <h3 className="mb-3">
                       ¿Qué compromiso se requiere?
                     </h3>
@@ -318,7 +312,7 @@ export default function App() {
                     </p>
                   </div>
 
-                  <div className="p-6 rounded-[20px] bg-[#F8F9FA] border border-gray-100">
+                  <div className="p-6 rounded-[20px] bg-surface-secondary border border-gray-100">
                     <h3 className="mb-3">
                       ¿Las iniciativas pueden cambiar?
                     </h3>
@@ -331,7 +325,7 @@ export default function App() {
                     </p>
                   </div>
 
-                  <div className="p-6 rounded-[20px] bg-[#F8F9FA] border border-gray-100">
+                  <div className="p-6 rounded-[20px] bg-surface-secondary border border-gray-100">
                     <h3 className="mb-3">
                       ¿Hay costos asociados?
                     </h3>
@@ -344,7 +338,7 @@ export default function App() {
                     </p>
                   </div>
 
-                  <div className="p-6 rounded-[20px] bg-[#F8F9FA] border border-gray-100">
+                  <div className="p-6 rounded-[20px] bg-surface-secondary border border-gray-100">
                     <h3 className="mb-3">
                       ¿Qué industrias pueden participar?
                     </h3>
@@ -365,7 +359,7 @@ export default function App() {
         {/* Join Section */}
         {activeSection === "join" && (
           <section className="py-24 bg-white min-h-[70vh]">
-            <div className="max-w-[600px] mx-auto px-8">
+            <div className="grid-container max-w-[600px] mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -388,7 +382,7 @@ export default function App() {
                     </label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4285F4]"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 ring-accent-default"
                       placeholder="Tu empresa"
                     />
                   </div>
@@ -399,7 +393,7 @@ export default function App() {
                     </label>
                     <input
                       type="email"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4285F4]"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 ring-accent-default"
                       placeholder="contacto@empresa.com"
                     />
                   </div>
@@ -459,7 +453,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="border-t border-gray-100 py-12 bg-white">
-        <div className="max-w-[1400px] mx-auto px-8 lg:px-24">
+        <div className="grid-container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="font-semibold text-xl">EAP</div>
             <div className="flex gap-8 text-sm text-muted-foreground">

@@ -113,7 +113,7 @@ export function Navigation({ onNavigate, activeSection }: NavigationProps) {
 
       {/* Content */}
       <motion.div 
-        className="relative max-w-[1400px] mx-auto px-8 lg:px-12 h-16 flex items-center justify-between"
+        className="relative grid-container h-16 flex items-center justify-between"
         animate={{
           borderBottom: scrolled ? '1px solid #EEEEEE' : '1px solid transparent'
         }}

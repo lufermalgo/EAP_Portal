@@ -20,7 +20,7 @@ export function InitiativeDetail({ initiative, onBack }: InitiativeDetailProps) 
         className="relative py-24 overflow-hidden"
         style={{ backgroundColor: initiative.bgColor }}
       >
-        <div className="max-w-[1000px] mx-auto px-8 relative z-10">
+        <div className="grid-container max-w-[1000px] mx-auto relative z-10">
           <motion.button
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -104,7 +104,7 @@ export function InitiativeDetail({ initiative, onBack }: InitiativeDetailProps) 
 
       {/* Content Sections */}
       <section className="py-16 bg-white">
-        <div className="max-w-[1000px] mx-auto px-8">
+        <div className="grid-container max-w-[1000px] mx-auto">
           {/* How it works */}
           {initiative.howItWorks && (
             <motion.div
@@ -117,7 +117,7 @@ export function InitiativeDetail({ initiative, onBack }: InitiativeDetailProps) 
               <div className="space-y-4">
                 {initiative.howItWorks.map((item, index) => (
                   <div key={index} className="flex gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#4285F4] text-white flex items-center justify-center flex-shrink-0 font-medium">
+                    <div className="w-8 h-8 rounded-full bg-accent-default text-white flex items-center justify-center flex-shrink-0 font-medium">
                       {index + 1}
                     </div>
                     <p className="text-muted-foreground leading-relaxed pt-1">
@@ -142,7 +142,7 @@ export function InitiativeDetail({ initiative, onBack }: InitiativeDetailProps) 
                 {initiative.objectives.map((objective, index) => (
                   <div 
                     key={index}
-                    className="p-6 rounded-[20px] bg-[#F8F9FA] border border-gray-100"
+                    className="p-6 rounded-[20px] bg-surface-secondary border border-gray-100"
                   >
                     <p className="leading-relaxed">{objective}</p>
                   </div>
@@ -156,7 +156,7 @@ export function InitiativeDetail({ initiative, onBack }: InitiativeDetailProps) 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="p-8 rounded-[24px] bg-gradient-to-br from-[#4285F4]/5 to-[#4285F4]/10 border border-[#4285F4]/20"
+            className="p-8 rounded-[24px] bg-gradient-to-br from-accent-default/5 to-accent-default/10 border border-accent-default/20"
           >
             <h2 className="mb-4">¿Interesado en participar?</h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
